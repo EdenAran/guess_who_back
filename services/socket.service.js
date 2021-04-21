@@ -15,12 +15,12 @@ function connectSockets(http, session) {
         autoSave: true
     }));
     gIo.on('connection', socket => {
-        console.log('New socket - socket.handshake.sessionID', socket.handshake.sessionID)
+        // console.log('New socket - socket.handshake.sessionID', socket.handshake.sessionID)
         gSocketBySessionIdMap[socket.handshake.sessionID] = socket
         // TODO: emitToUser feature - need to tested for CaJan21
         // if (socket.handshake?.session?.user) socket.join(socket.handshake.session.user._id)
         socket.on('disconnect', socket => {
-            console.log('Someone disconnected')
+            // console.log('Someone disconnected')
             if (socket.handshake) {
                 gSocketBySessionIdMap[socket.handshake.sessionID] = null
             }
