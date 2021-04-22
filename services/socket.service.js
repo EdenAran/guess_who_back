@@ -15,10 +15,7 @@ function connectSockets(http, session) {
         autoSave: true
     }));
     gIo.on('connection', socket => {
-        // console.log('New socket - socket.handshake.sessionID', socket.handshake.sessionID)
         gSocketBySessionIdMap[socket.handshake.sessionID] = socket
-        // TODO: emitToUser feature - need to tested for CaJan21
-        // if (socket.handshake?.session?.user) socket.join(socket.handshake.session.user._id)
         socket.on('disconnect', socket => {
             // console.log('Someone disconnected')
             if (socket.handshake) {
@@ -30,6 +27,7 @@ function connectSockets(http, session) {
         })
         socket.on('game deleted', (gameId) => {
             socket.to(gameId).emit('delete game')
+            socket.broadcast.emit('update games')
         })
         socket.on('joined game', topic => {
             if (socket.myTopic === topic) return;
@@ -39,8 +37,6 @@ function connectSockets(http, session) {
             socket.join(topic)
             socket.myTopic = topic
         })
-        
-
     })
 }
 

@@ -22,8 +22,8 @@ async function getById(req, res) {
 }
 
 async function setGame(req, res) {
-    const {user} = req.body
-    const games = await gameService.add(user);
+    const {user, numOfTiles} = req.body
+    const games = await gameService.add(user, numOfTiles);
     res.send(games)
 }
 

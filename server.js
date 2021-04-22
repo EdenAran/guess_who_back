@@ -1,3 +1,4 @@
+// DONT CHANGE
 const express = require('express')
 const cors = require('cors')
 const path = require('path')
@@ -25,11 +26,8 @@ if (process.env.NODE_ENV === 'production') {
     }
     app.use(cors(corsOptions))
 }
-
-const gameRoute = require('./api/game/game.routes')
 const {connectSockets} = require('./services/socket.service')
 
-// routes
 const setupAsyncLocalStorage = require('./middlewares/setupAls.middleware')
 app.all('*', setupAsyncLocalStorage)
 
@@ -39,7 +37,13 @@ app.get('/api/setup-session', (req, res) =>{
     // console.log('setup-session:', req.sessionID);
     res.end()
 })
+
+//CHANGE
+const gameRoute = require('./api/game/game.routes')
 app.use('/api/game', gameRoute)
+// STOP CHANGE
+
+
 connectSockets(http, session)
 
 app.get('/**', (req, res) => {

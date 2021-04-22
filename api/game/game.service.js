@@ -34,9 +34,9 @@ async function remove(gameId) {
     }
 }
 
-async function add(player) {
+async function add(player, numOfTiles) {
     const collection = await dbService.getCollection('game');
-    const game = _getEmptyGame(player);
+    const game = _getEmptyGame(player, numOfTiles);
     try {
         await collection.insertOne(game);
         return game;
@@ -77,16 +77,17 @@ function _buildCriteria(filterBy) {
     return criteria;
 }
 
-function _getEmptyGame(player1) {
+function _getEmptyGame(player1, numOfTiles) {
     return {
         player1,
         player2: {},
-        tiles: _getTiles(),
+        selectedTilesIdx: { 'player1': _getRandInt(numOfTiles), 'player2': _getRandInt(numOfTiles) },
+        tiles: _getTiles(numOfTiles),
     }
 }
 
-function _getTiles() {
-    const tiles = _shuffle(allTiles).slice(0, 25)
+function _getTiles(numOfTiles) {
+    const tiles = _shuffle(allTiles).slice(0, numOfTiles)
     return tiles
 }
 
@@ -100,4 +101,8 @@ function _shuffle(array) {
         array[index] = temp;
     }
     return array;
+}
+
+function _getRandInt(range) {
+    return Math.floor(Math.random() * range + 1)
 }

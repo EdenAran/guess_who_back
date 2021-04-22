@@ -1,8 +1,7 @@
 const express = require('express')
-const { log } = require('../../middlewares/logger.middleware')
-// const {requireAuth, requireAdmin} = require('../../middlewares/requireAuth.middleware')
-const { query, setGame, getById, update, remove } = require('./game.controller')
 const router = express.Router()
+const { log } = require('../../middlewares/logger.middleware')
+const { query, setGame, getById, update, remove } = require('./game.controller')
 
 router.get('/', log, query)
 router.get('/:id', log, getById)
