@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.b58d619f.chunk.css",
-    "main.js": "/static/js/main.eb8e782e.chunk.js",
-    "main.js.map": "/static/js/main.eb8e782e.chunk.js.map",
+    "main.js": "/static/js/main.123b0f58.chunk.js",
+    "main.js.map": "/static/js/main.123b0f58.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.dd55c271.js",
     "runtime-main.js.map": "/static/js/runtime-main.dd55c271.js.map",
-    "static/js/2.bb08ada2.chunk.js": "/static/js/2.bb08ada2.chunk.js",
-    "static/js/2.bb08ada2.chunk.js.map": "/static/js/2.bb08ada2.chunk.js.map",
+    "static/js/2.f88c20bc.chunk.js": "/static/js/2.f88c20bc.chunk.js",
+    "static/js/2.f88c20bc.chunk.js.map": "/static/js/2.f88c20bc.chunk.js.map",
     "static/js/3.e08e671a.chunk.js": "/static/js/3.e08e671a.chunk.js",
     "static/js/3.e08e671a.chunk.js.map": "/static/js/3.e08e671a.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.b58d619f.chunk.css.map": "/static/css/main.b58d619f.chunk.css.map",
-    "static/js/2.bb08ada2.chunk.js.LICENSE.txt": "/static/js/2.bb08ada2.chunk.js.LICENSE.txt",
+    "static/js/2.f88c20bc.chunk.js.LICENSE.txt": "/static/js/2.f88c20bc.chunk.js.LICENSE.txt",
     "static/media/Adi Nisimov.jpg": "/static/media/Adi Nisimov.05c65b86.jpg",
     "static/media/Amit Shrim.jpg": "/static/media/Amit Shrim.3a847694.jpg",
     "static/media/Anat Asman (Hani).jpg": "/static/media/Anat Asman (Hani).3fa4c5ae.jpg",
@@ -76,8 +76,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.dd55c271.js",
-    "static/js/2.bb08ada2.chunk.js",
+    "static/js/2.f88c20bc.chunk.js",
     "static/css/main.b58d619f.chunk.css",
-    "static/js/main.eb8e782e.chunk.js"
+    "static/js/main.123b0f58.chunk.js"
   ]
 }
